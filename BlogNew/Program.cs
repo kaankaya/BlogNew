@@ -13,6 +13,7 @@ builder.Services.AddDbContext<BlogContext>(options =>
     options.UseSqlServer(con);
 });
 builder.Services.AddScoped<IPostRepository,EfPostRepository>(); //her interface çaðýrdýgýmýzda gerçek nesne üretip çaðýrmamýz lazým
+builder.Services.AddScoped<ITagRepository,EfTagRepository>();
 var app = builder.Build();
 SeedData.TestVerileriniDoldur(app);
 
